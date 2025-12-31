@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 int main(){
-    char ch[]={"ABABA"};
+    char ch[]={"ABABAC"};
     int n=strlen(ch);
     int c=n/2;
     int j=n-1;
@@ -10,20 +10,16 @@ int main(){
       if(ch[i]==ch[j]){
       continue;
       }
-      printf("i==%d",i);
-      printf("j==%d",j);
       j--;
       if(i==j){
         break;
       }
     }
     if(i==j){
-      printf("i==%d",i);
-      printf("j==%d",j);
-      printf("The number is pelindrome");
+      printf("The String is pelindrome");
     }
     else{
-      printf("The number is not pelindrome");
+      printf("The String is not pelindrome");
     }
    return 0;
 }
