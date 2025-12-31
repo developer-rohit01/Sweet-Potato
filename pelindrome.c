@@ -1,25 +1,25 @@
-#include<stdio.h>
-#include<string.h>
-int main(){
-    char ch[]={"ABABAC"};
-    int n=strlen(ch);
-    int c=n/2;
-    int j=n-1;
-    int i;
-    for( i=0;i<=c;i++){
-      if(ch[i]==ch[j]){
-      continue;
-      }
-      j--;
-      if(i==j){
-        break;
-      }
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char ch[] = "ABABAC";
+    int i = 0;
+    int j = strlen(ch) - 1;
+    int isPalindrome = 1;
+
+    while (i < j) {
+        if (ch[i] != ch[j]) {
+            isPalindrome = 0;
+            break;
+        }
+        i++;
+        j--;
     }
-    if(i==j){
-      printf("The String is pelindrome");
-    }
-    else{
-      printf("The String is not pelindrome");
-    }
-   return 0;
+
+    if (isPalindrome)
+        printf("The string is palindrome");
+    else
+        printf("The string is not palindrome");
+
+    return 0;
 }
