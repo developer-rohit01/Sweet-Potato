@@ -13,6 +13,6 @@ int main(){
 
     printf("\nPress Enter to exit...");
     getchar();   // consume leftover newline
-    getchar(); 
+    getchar();  //Wait for the user to press enter 
      return 0;
 }
