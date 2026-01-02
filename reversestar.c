@@ -10,5 +10,9 @@ int main(){
     }
      printf("\n");
 }
+
+    printf("\nPress Enter to exit...");
+    getchar();   // consume leftover newline
+    getchar();  //Wait for the user to press enter 
      return 0;
 }
