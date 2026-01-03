@@ -16,7 +16,7 @@ int main(){
       scanf("%f",&C);
 
       S=circle(C);
-      printf("Area of  y cirlce is = %.2f",S);
+      printf("Area of cirlce is = %.2f",S);
 
 
     printf("\nPress Enter to exit...");
