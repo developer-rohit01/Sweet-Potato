@@ -19,6 +19,8 @@ int main(){
       printf("Area of  y cirlce is = %.2f",S);
 
 
-
+    printf("\nPress Enter to exit...");
+    getchar();
+    getchar();
    return 0;
 }
