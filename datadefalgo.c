@@ -38,5 +38,9 @@ int main(){
         printf("\n");
          printf("(%.2f , %.2f)\n", x[i], y[i]);
       }
+
+      printf("\nPress Enter to exit...");
+    getchar(); 
+    getchar();
    return 0;
 }
