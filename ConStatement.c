@@ -6,19 +6,19 @@ int main() {
     printf("Enter two numbers: ");
     scanf("%d %d", &a, &b);
 
-    // 1️⃣ Simple if
+    //  Simple if
     if (a == b) {
         printf("\nBoth numbers are equal.\n");
     }
 
-    // 2️⃣ if-else
+    //  if-else
     if (a > b) {
         printf("a is greater than b.\n");
     } else {
         printf("b is greater than or equal to a.\n");
     }
 
-    // 3️⃣ else-if ladder
+    //  else-if ladder
     printf("\nCheck number type for a: ");
     if (a > 0) {
         printf("a is Positive\n");
@@ -28,7 +28,7 @@ int main() {
         printf("a is Zero\n");
     }
 
-    // 4️⃣ Nested if
+    //  Nested if
     printf("\nChecking biggest number and parity:\n");
     if (a > b) {
         printf("a is bigger\n");
@@ -44,7 +44,7 @@ int main() {
             printf("b is ODD\n");
     }
 
-    // 5️⃣ Switch case
+    //  Switch case
     printf("\nMenu:\n");
     printf("1. Add\n");
     printf("2. Subtract\n");
@@ -74,7 +74,7 @@ int main() {
             printf("Invalid choice\n");
     }
 
-    // 6️⃣ Ternary operator
+    //  Ternary operator
     int max = (a > b) ? a : b;
     printf("\nUsing ternary: Max = %d\n", max);
     
