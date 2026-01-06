@@ -73,6 +73,31 @@ void write_file() {
 
 
 
+void append_file() {
+    char filename[50], line[500];
+    printf("Enter filename: ");
+    scanf("%49s", filename);
+    getchar();
+
+    FILE *fp = fopen(filename, "a");
+    if (fp == NULL) {
+        printf("Error opening file!\n");
+        return;
+    }
+
+    printf("Type content to append (Ctrl+D / Ctrl+Z to stop):\n");
+    while (fgets(line, sizeof line, stdin) != NULL) {
+        fputs(line, fp);
+    }
+
+    fclose(fp);
+    printf("Appended.\n");
+}
+
+
+
+
+
 
 
 
