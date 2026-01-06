@@ -30,6 +30,24 @@ int main(){
         getchar(); // clear leftover newline
 
 
+          switch (choice) {
+            case 1: write_file(); break;
+            case 2: append_file(); break;
+            case 3: read_file(); break;
+            case 4: copy_file(); break;
+            case 5: read_words(); break;
+            case 6: read_chars(); break;
+            case 7: printf("Exiting...\n"); break;
+            default: printf("Invalid choice!\n");
+        }
+
+    } while (choice != 7);
+
+    return 0;
+}
+
+
+
 
 
 
