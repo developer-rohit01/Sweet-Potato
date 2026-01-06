@@ -119,6 +119,26 @@ void read_file() {
 
 
 
+void copy_file() {
+    char srcname[50], destname[50];
+    char buffer[1024];
+    size_t n;
+
+    printf("Enter source file: ");
+    scanf("%49s", srcname);
+    printf("Enter destination file: ");
+    scanf("%49s", destname);
+
+    FILE *src = fopen(srcname, "rb");
+    FILE *dest = fopen(destname, "wb");
+
+    if (src == NULL || dest == NULL) {
+        printf("Error opening files!\n");
+        return;
+    }
+
+
+
 
 
 
