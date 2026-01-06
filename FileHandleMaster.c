@@ -117,8 +117,6 @@ void read_file() {
 }
 
 
-
-
 void copy_file() {
     char srcname[50], destname[50];
     char buffer[1024];
@@ -137,14 +135,12 @@ void copy_file() {
         return;
     }
 
+    while ((n = fread(buffer, 1, sizeof buffer, src)) > 0) {
+        fwrite(buffer, 1, n, dest);
+    }
 
-
-
-
-
-
-
-
-
-   return 0;
+    fclose(src);
+    fclose(dest);
+    printf("File copied successfully.\n");
 }
+
