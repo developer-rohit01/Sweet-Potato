@@ -97,6 +97,27 @@ void append_file() {
 
 
 
+void read_file() {
+    char filename[50], line[500];
+    printf("Enter filename: ");
+    scanf("%49s", filename);
+
+    FILE *fp = fopen(filename, "r");
+    if (fp == NULL) {
+        printf("File not found!\n");
+        return;
+    }
+
+    printf("\n--- File Content ---\n");
+    while (fgets(line, sizeof line, fp) != NULL) {
+        printf("%s", line);
+    }
+
+    fclose(fp);
+}
+
+
+
 
 
 
