@@ -47,6 +47,27 @@ int main(){
 }
 
 
+// function to write in file 
+void write_file() {
+    char filename[50], line[500];
+    printf("Enter filename: ");
+    scanf("%49s", filename);
+    getchar();
+
+    FILE *fp = fopen(filename, "w");
+    if (fp == NULL) {
+        printf("Error opening file!\n");
+        return;
+    }
+
+    printf("Type your content (Ctrl+D / Ctrl+Z to stop):\n");
+    while (fgets(line, sizeof line, stdin) != NULL) {
+        fputs(line, fp);
+    }
+
+    fclose(fp);
+    printf("Saved.\n");
+}
 
 
 
