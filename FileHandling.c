@@ -13,13 +13,15 @@
         return 1;
     }
 
-    char buffer[8];          // pick any size
+    char buffer[8];          // pick any size fetching in buffer assume as bucket per iteration 8 size buffer load by os 
     size_t n;
 
     do {
         n = fread(buffer, 1, sizeof buffer, src);   // read up to buffer size
         fwrite(buffer, 1, n, dest);                 // write ONLY what we read
-    } while (n>0);                                 // stop when fread returns 0
+    } while (n>0);   // stop when fread returns 0
+    
+    printf("Fetching from meta and Printing done in zeta");
 
     fclose(src);
     fclose(dest);
