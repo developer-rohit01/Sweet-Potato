@@ -144,3 +144,46 @@ void copy_file() {
     printf("File copied successfully.\n");
 }
 
+
+
+void read_words() {
+    char filename[50], word[100];
+    printf("Enter filename: ");
+    scanf("%49s", filename);
+
+    FILE *fp = fopen(filename, "r");
+    if (fp == NULL) {
+        printf("File not found!\n");
+        return;
+    }
+
+    printf("\n--- Words ---\n");
+    while (fscanf(fp, "%99s", word) == 1) {
+        printf("%s ", word);
+    }
+
+    fclose(fp);
+}
+
+
+
+void read_chars() {
+    char filename[50];
+    int ch;
+
+    printf("Enter filename: ");
+    scanf("%49s", filename);
+
+    FILE *fp = fopen(filename, "r");
+    if (fp == NULL) {
+        printf("File not found!\n");
+        return;
+    }
+
+    printf("\n--- Characters ---\n");
+    while ((ch = fgetc(fp)) != EOF) {
+        putchar(ch);
+    }
+
+    fclose(fp);
+}
