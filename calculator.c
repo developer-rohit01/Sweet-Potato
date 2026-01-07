@@ -31,7 +31,7 @@ int main(){
             case 5: FABO(); break;
             case 6: FACT(); break;
             case 7: SQR(); break;
-            case 8: CUBE(); break;
+            // case 8: CUBE(); break;
             case 9: printf("Exiting...\n"); break;
             default: printf("Invalid choice!\n");
         }
@@ -145,7 +145,15 @@ void FACT(){
 }
 
 
+void SQR(){
+  int n;
+  printf("Enter the Number to get Square = ");
+  scanf("%d",&n);
 
+  int Result = n*n;
+
+  printf("Result = %d",Result);
+}
 
 
 
