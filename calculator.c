@@ -15,7 +15,7 @@ int main(){
           int choice;
 
            do {
-        printf("\n================================= CALCULATOR BY ROHIT ===========================================\n");
+        printf("\n================================= CALCULATOR === DEVLOPER---> ROHIT =============================\n");
         printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FABONACCI\t6.FACTORIAL\t7.SQUARE\t8.CUBE\t9.EXIT\n");
         printf("=================================================================================================\n\n");
         printf("Enter your choice: ");
@@ -158,14 +158,13 @@ void SQR(){
 
 void CUBE(){
   int n;
-  printf("Enter the Number to get Square = ");
+  printf("Enter the Number to get Cube = ");
   scanf("%d",&n);
 
   int Result = n*n*n;
 
   printf("Result = %d",Result);
 }
-
 
 
 
