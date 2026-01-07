@@ -26,10 +26,10 @@ int main(){
             case 1: ADD(); break;
             case 2: SUB(); break;
             case 3: MUL(); break;
-            case 4: DIV(); break;
-            case 5: FACT(); break;
-            case 6: SQR(); break;
-            case 7: CUBE(); break;
+            // case 4: DIV(); break;
+            // case 5: FACT(); break;
+            // case 6: SQR(); break;
+            // case 7: CUBE(); break;
             case 8: printf("Exiting...\n"); break;
             default: printf("Invalid choice!\n");
         }
@@ -70,6 +70,29 @@ void SUB(){
 
      printf("Result = %.2f",result);
 }
+
+
+
+void MUL(){
+      
+     float a,b,result;
+     printf("Enter the First Number ");
+     scanf("%f",&a);
+
+     printf("Enter the Second Number ");
+     scanf("%f",&b);
+
+     result=a*b;
+
+     printf("Result = %.2f",result);
+}
+
+
+
+
+
+
+
 
 
 
