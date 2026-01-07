@@ -5,7 +5,7 @@ void ADD();
 void SUB();
 void MUL();
 void DIV();
-void FACT();
+void FABO();
 void SQR();
 void CUBE();
 
@@ -16,7 +16,7 @@ int main(){
            do {
         printf("\n================ CALCULATOR BY ROHIT ================\n");
         printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FABONACCI\t6.SQR\t7.CUBE\t8.EXIT\n");
-        printf("===========================================================\n");
+        printf("===========================================================\n\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         getchar(); // clear leftover newline
@@ -27,7 +27,7 @@ int main(){
             case 2: SUB(); break;
             case 3: MUL(); break;
             case 4: DIV(); break;
-           case 5: FABO(); break;
+            case 5: FABO(); break;
             // case 6: SQR(); break;
             // case 7: CUBE(); break;
             case 8: printf("Exiting...\n"); break;
@@ -44,10 +44,10 @@ int main(){
 void ADD(){
       
      float a,b,result;
-     printf("Enter the First Number ");
+     printf("Enter the First Number = ");
      scanf("%f",&a);
 
-     printf("Enter the Second Number ");
+     printf("Enter the Second Number = ");
      scanf("%f",&b);
 
      result=a+b;
@@ -60,10 +60,10 @@ void ADD(){
 void SUB(){
       
      float a,b,result;
-     printf("Enter the First Number ");
+     printf("Enter the First Number = ");
      scanf("%f",&a);
 
-     printf("Enter the Second Number ");
+     printf("Enter the Second Number = ");
      scanf("%f",&b);
 
      result=a-b;
@@ -76,10 +76,10 @@ void SUB(){
 void MUL(){
       
      float a,b,result;
-     printf("Enter the First Number ");
+     printf("Enter the First Number = ");
      scanf("%f",&a);
 
-     printf("Enter the Second Number ");
+     printf("Enter the Second Number = ");
      scanf("%f",&b);
 
      result=a*b;
@@ -91,10 +91,10 @@ void MUL(){
 void DIV(){
       
      float a,b,result;
-     printf("Enter the First Number ");
+     printf("Enter the First Number = ");
      scanf("%f",&a);
 
-     printf("Enter the Second Number ");
+     printf("Enter the Second Number = ");
      scanf("%f",&b);
 
      result=a/b;
@@ -108,17 +108,18 @@ void FABO(){
       
   int n;
     int firstnum=0,secondnum=1,nextnum;
-    printf("Enter the number to get Fabonacci Series\n");
+    printf("Enter the number to get Fabonacci Series = \a ");
     scanf("%d",&n);
     printf("\n");
 
     for (int i = 1; i < n ; i++)
     {
-        printf("%d\t",firstnum);
+        printf("%d\t\a",firstnum);
         nextnum=firstnum+secondnum;
         firstnum=secondnum;
         secondnum=nextnum;
     }
+    printf("\n");
 }
 
 
