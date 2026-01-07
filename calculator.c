@@ -15,7 +15,7 @@ int main(){
 
            do {
         printf("\n================ CALCULATOR BY ROHIT ================\n");
-        printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FACT\t6.SQR\t7.CUBE\t8.EXIT\n");
+        printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FABONACCI\t6.SQR\t7.CUBE\t8.EXIT\n");
         printf("===========================================================\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -26,8 +26,8 @@ int main(){
             case 1: ADD(); break;
             case 2: SUB(); break;
             case 3: MUL(); break;
-            // case 4: DIV(); break;
-            // case 5: FACT(); break;
+            case 4: DIV(); break;
+           case 5: FABO(); break;
             // case 6: SQR(); break;
             // case 7: CUBE(); break;
             case 8: printf("Exiting...\n"); break;
@@ -85,6 +85,40 @@ void MUL(){
      result=a*b;
 
      printf("Result = %.2f",result);
+}
+
+
+void DIV(){
+      
+     float a,b,result;
+     printf("Enter the First Number ");
+     scanf("%f",&a);
+
+     printf("Enter the Second Number ");
+     scanf("%f",&b);
+
+     result=a/b;
+
+     printf("Result = %.2f",result);
+}
+
+
+
+void FABO(){
+      
+  int n;
+    int firstnum=0,secondnum=1,nextnum;
+    printf("Enter the number to get Fabonacci Series\n");
+    scanf("%d",&n);
+    printf("\n");
+
+    for (int i = 1; i < n ; i++)
+    {
+        printf("%d\t",firstnum);
+        nextnum=firstnum+secondnum;
+        firstnum=secondnum;
+        secondnum=nextnum;
+    }
 }
 
 

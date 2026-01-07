@@ -1,1 +1,1 @@
-    // } while (choice != 8);
+ case 4: DIV(); break;
