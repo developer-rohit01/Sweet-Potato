@@ -6,6 +6,7 @@ void SUB();
 void MUL();
 void DIV();
 void FABO();
+void FACT();
 void SQR();
 void CUBE();
 
@@ -15,7 +16,7 @@ int main(){
 
            do {
         printf("\n================ CALCULATOR BY ROHIT ================\n");
-        printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FABONACCI\t6.SQR\t7.CUBE\t8.EXIT\n");
+        printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FABONACCI\t6.FACTORIAL\t7.SQUARE\t8.CUBE\t9.EXIT\n");
         printf("===========================================================\n\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -28,13 +29,14 @@ int main(){
             case 3: MUL(); break;
             case 4: DIV(); break;
             case 5: FABO(); break;
-            // case 6: SQR(); break;
-            // case 7: CUBE(); break;
-            case 8: printf("Exiting...\n"); break;
+            case 6: FACT(); break;
+            case 7: SQR(); break;
+            case 8: CUBE(); break;
+            case 9: printf("Exiting...\n"); break;
             default: printf("Invalid choice!\n");
         }
 
-    } while (choice != 8);
+    } while (choice != 9);
 
     return 0;
 }
@@ -121,6 +123,27 @@ void FABO(){
     }
     printf("\n");
 }
+
+
+void FACT(){
+   int n;
+    long long fact = 1;
+
+    printf("Enter a number = ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Factorial does not exist for negative numbers.\n");
+        return 1;
+    }
+
+    for (int i = 1; i <= n; i++) {
+        fact = fact * i;
+    }
+
+    printf("Factorial = %lld\n", fact);
+}
+
 
 
 
