@@ -15,9 +15,9 @@ int main(){
           int choice;
 
            do {
-        printf("\n================ CALCULATOR BY ROHIT ================\n");
+        printf("\n================================= CALCULATOR BY ROHIT ===========================================\n");
         printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FABONACCI\t6.FACTORIAL\t7.SQUARE\t8.CUBE\t9.EXIT\n");
-        printf("===========================================================\n\n");
+        printf("=================================================================================================\n\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         getchar(); // clear leftover newline
@@ -31,7 +31,7 @@ int main(){
             case 5: FABO(); break;
             case 6: FACT(); break;
             case 7: SQR(); break;
-            // case 8: CUBE(); break;
+            case 8: CUBE(); break;
             case 9: printf("Exiting...\n"); break;
             default: printf("Invalid choice!\n");
         }
@@ -151,6 +151,17 @@ void SQR(){
   scanf("%d",&n);
 
   int Result = n*n;
+
+  printf("Result = %d",Result);
+}
+
+
+void CUBE(){
+  int n;
+  printf("Enter the Number to get Square = ");
+  scanf("%d",&n);
+
+  int Result = n*n*n;
 
   printf("Result = %d",Result);
 }
