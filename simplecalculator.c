@@ -7,14 +7,19 @@ int main(){
      float a,b;
      char ch;
 
-      
-     printf("Enter The First value: ");
-     scanf("%f",&a);
-     printf("Enter the Second value: ");
-     scanf("%f",&b);
-     printf("Choose the Operator '+' '-' '*' '/' \n ");
-     scanf(" %c",&ch);
+        printf("\n");
 
+        printf("\n================================= CALCULATOR === DEVLOPER---> ROHIT =============================\n");
+        printf("                              +\t\t-\t*\t/\n");
+        printf("=================================================================================================\n\n");
+        printf("Enter The First value: ");
+        scanf("%f",&a);
+        printf("Enter the Second value: ");
+        scanf("%f",&b);
+
+     
+       printf("Choose the Operator =   ");
+       scanf(" %c",&ch);
     
      if(ch=='+'){
         printf("%.1f + %.1f = %.1f",a,b,a+b);
@@ -32,9 +37,12 @@ int main(){
      else {
         printf("Invalid Opeator Selected");
      }
-
+    
+    printf("\nPRESS ENTER TO EXIT...");
+    getch();
     getch();
 
+     
      return 0;
      
 }
