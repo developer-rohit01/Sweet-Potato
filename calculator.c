@@ -9,14 +9,14 @@ void FABO();
 void FACT();
 void SQR();
 void CUBE();
-
+void SimpleInt();
 
 int main(){
           int choice;
 
            do {
         printf("\n================================= CALCULATOR === DEVLOPER---> ROHIT =============================\n");
-        printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FABONACCI\t6.FACTORIAL\t7.SQUARE\t8.CUBE\t9.EXIT\n");
+        printf("1.ADD\t2.SUB\t3.MUL\t4.DIV\t5.FABONACCI\t6.FACTORIAL\t7.SQUARE\t8.CUBE\t9.Simple Interest\t10.Exit");
         printf("=================================================================================================\n\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -32,11 +32,12 @@ int main(){
             case 6: FACT(); break;
             case 7: SQR(); break;
             case 8: CUBE(); break;
-            case 9: printf("Exiting...\n"); break;
+            case 9: SimpleInt(); break;
+            case 10: printf("Exiting...\n"); break;
             default: printf("Invalid choice!\n");
         }
 
-    } while (choice != 9);
+    } while (choice != 10);
 
     return 0;
 }
@@ -167,7 +168,23 @@ void CUBE(){
 }
 
 
+void SimpleInt(){
+  
+float principal, rate, time, simpleInterest;
 
+    printf("Enter principal amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter rate of interest (in percentage): ");
+    scanf("%f", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%f", &time);
+
+    simpleInterest = (principal * rate * time) / 100;
+
+    printf("The Simple Interest is: %.2f\n", simpleInterest);
+}
 
 
 
