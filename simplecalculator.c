@@ -14,7 +14,7 @@ int main(){
      scanf("%f",&b);
      printf("Choose the Operator '+' '-' '*' '/' \n ");
      scanf(" %c",&ch);
-2
+
     
      if(ch=='+'){
         printf("%.1f + %.1f = %.1f",a,b,a+b);
