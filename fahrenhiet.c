@@ -16,8 +16,8 @@ int main(){
            int choice;
            do{
         printf("\n================================= TEMP Scale CONVERSION === DEVLOPER---> ROHIT ==========================\n\n");
-        printf("\t1.Celcius --> Fahrenheit\t2.Fahrenheit --> Celcius\t3.Fahrenheit --> Kelvin\n\n\t4.Kelvin --> Fahrenheit\t");
-        printf("\t5.Celcius --> Kelvin\t\t6.Kelvin --> Celcius\t\n\n\t\t\t\t\t\t7.Exit\n");
+        printf("\t1.Celsius --> Fahrenheit\t2.Fahrenheit --> Celsius\t3.Fahrenheit --> Kelvin\n\n\t4.Kelvin --> Fahrenheit\t");
+        printf("\t5.Celsius --> Kelvin\t\t6.Kelvin --> Celsius\t\n\n\t\t\t\t\t\t7.Exit\n");
         printf("=========================================================================================================\n\n");
         printf("Enter your choice: ");
         scanf("%d",&choice);
@@ -29,7 +29,7 @@ int main(){
             case 3: fahtokel(); break;
             case 4: keltofah(); break;
             case 5: celtokel(); break;
-            
+            case 6: keltocel(); break;
             case 7: printf("Exiting...\n"); break;
             default: printf("Invalid choice!\n");
            }
@@ -84,3 +84,12 @@ void celtokel(){
     kelvin = celsius + 273.15;
     printf("%.2f Celsius = %.2f Kelvin\n", celsius, kelvin);
 }
+
+void keltocel(){
+    float kelvin, celsius;
+    printf("Enter temperature in Kelvin: ");
+    scanf("%f", &kelvin);
+    celsius = kelvin - 273.15;
+    printf("%.2f Kelvin = %.2f Celsius\n", kelvin, celsius);
+}
+
