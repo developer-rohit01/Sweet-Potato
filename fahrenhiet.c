@@ -1,16 +1,36 @@
 
 #include<stdio.h>
+void celtofah();
+void fahtocel();
+void keltofah();
+void fahtokel();
+void celtokel();
+void keltocel();
+
 
 
 
 int main(){
 
-           
+           int choice;
+           do{
         printf("\n================================= TEMP Scale CONVERSION === DEVLOPER---> ROHIT ==========================\n\n");
         printf("\t1.Celcius --> Fahrenheit\t2.Fahrenheit --> Celcius\t3.Fahrenheit --> Kelvin\n\n\t4.Kelvin --> Fahrenheit\t");
         printf("\t5.Celcius --> Kelvin\t\t6.Kelvin --> Celcius\t\n\n\t\t\t\t\t\t7.Exit\n");
         printf("=========================================================================================================\n\n");
-        
+        printf("Enter your choice: ");
+        scanf("%d",&choice);
+        getchar();
+
+    switch (choice) {
+            case 1: celtofah(); break;
+            case 2: fahtocel(); break;
+           
+            case 7: printf("Exiting...\n"); break;
+            default: printf("Invalid choice!\n");
+           }
+          
+          }while (choice != 7);
            
      return 0;
 }
@@ -18,9 +38,21 @@ int main(){
 
 
 
+void celtofah(){
+    float celsius, fahrenheit;
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &celsius);
+    fahrenheit = (celsius * 9/5) + 32;
+    printf("%.2f Celsius = %.2f Fahrenheit\n", celsius, fahrenheit);
+}
 
 
 
-
-
+void fahtocel(){
+    float fahrenheit, celsius;
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+    celsius = (fahrenheit - 32) * 5/9;
+    printf("%.2f Fahrenheit = %.2f Celsius\n", fahrenheit, celsius);
+}
 
