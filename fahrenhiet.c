@@ -1,14 +1,26 @@
 
 #include<stdio.h>
 
+
+
 int main(){
-    float f,c;
 
-    printf("Enter the temp in Fahrentheit = ");
-    scanf("%f",&f);
-    
-    c=(f-32)/1.8;
-    printf("The temperature in celcius is %.1f",c);
-
+           
+        printf("\n================================= TEMP Scale CONVERSION === DEVLOPER---> ROHIT ==========================\n\n");
+        printf("\t1.Celcius --> Fahrenheit\t2.Fahrenheit --> Celcius\t3.Fahrenheit --> Kelvin\n\n\t4.Kelvin --> Fahrenheit\t");
+        printf("\t5.Celcius --> Kelvin\t\t6.Kelvin --> Celcius\t\n\n\t\t\t\t\t\t7.Exit\n");
+        printf("=========================================================================================================\n\n");
+        
+           
      return 0;
 }
+
+
+
+
+
+
+
+
+
+
