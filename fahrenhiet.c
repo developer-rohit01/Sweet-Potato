@@ -27,6 +27,7 @@ int main(){
             case 1: celtofah(); break;
             case 2: fahtocel(); break;
             case 3: fahtokel(); break;
+            case 4: keltofah(); break;
             case 7: printf("Exiting...\n"); break;
             default: printf("Invalid choice!\n");
            }
@@ -65,4 +66,12 @@ void fahtokel(){
     printf("%.2f Fahrenheit = %.2f Kelvin\n", fahrenheit, kelvin);
 }
 
+
+void keltofah(){
+    float kelvin, fahrenheit;
+    printf("Enter temperature in Kelvin: ");
+    scanf("%f", &kelvin);
+    fahrenheit = (kelvin - 273.15) * 9/5 + 32;
+    printf("%.2f Kelvin = %.2f Fahrenheit\n", kelvin, fahrenheit);
+}
 
