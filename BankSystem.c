@@ -18,21 +18,22 @@ void depositMoney();
 void withdrawMoney();
 void checkBalance();
 void displayAll();
+void deleteAccount();
+
 
 int main() {
     int choice;
 
     do {
-        printf("\n--- Simple Banking System ---\n");
-        printf("1. Create Account\n");
-        printf("2. Deposit Money\n");
-        printf("3. Withdraw Money\n");
-        printf("4. Check Balance\n");
-        printf("5. Display All Accounts\n");
-        printf("6. Exit\n");
 
-        printf("Enter choice: ");
-        scanf("%d", &choice);
+        printf("\n================================= Bank Management System === DEVLOPER---> ROHIT ==========================\n\n");
+        printf("\t1.Create Account\t\t2.Deposit Money\t\t\t3.Withdraw Money\n\n\t4.Check Balance\t");
+        printf("\t\t5.Display All Account\t\t6.Delete Account\n\n\t\t\t\t\t   7.Exit\n");
+        printf("=========================================================================================================\n\n");
+        printf("Enter your choice: ");
+        scanf("%d",&choice);
+        getchar();
+
 
         switch(choice) {
             case 1: createAccount(); break;
@@ -40,7 +41,8 @@ int main() {
             case 3: withdrawMoney(); break;
             case 4: checkBalance(); break;
             case 5: displayAll(); break;
-            case 6: exit(0);
+            case 6: deleteAccount(); break; 
+            case 7: exit(0);
             default: printf("Invalid choice!\n");
         }
     } while(1);
@@ -223,4 +225,47 @@ void checkBalance() {
     }
 
     fclose(fp);
+}
+
+
+void deleteAccount() {
+    FILE *fp, *temp;
+    struct Account acc;
+    int accNo, found = 0;
+
+    fp = fopen("bank.dat", "rb");
+    if (fp == NULL) {
+        printf("No records found\n");
+        return;
+    }
+
+    temp = fopen("temp.dat", "wb");
+    if (temp == NULL) {
+        fclose(fp);
+        printf("File error\n");
+        return;
+    }
+
+    printf("Enter Account Number to delete: ");
+    scanf("%d", &accNo);
+
+    while (fread(&acc, sizeof(acc), 1, fp)) {
+        if (acc.accNo == accNo) {
+            found = 1;   // skip writing this record
+        } else {
+            fwrite(&acc, sizeof(acc), 1, temp);
+        }
+    }
+
+    fclose(fp);
+    fclose(temp);
+
+    if (found) {
+        remove("bank.dat");
+        rename("temp.dat", "bank.dat");
+        printf("Account deleted successfully!\n");
+    } else {
+        remove("temp.dat");
+        printf("Account not found!\n");
+    }
 }
