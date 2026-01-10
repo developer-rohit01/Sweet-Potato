@@ -51,7 +51,6 @@ int main() {
 }
 
 
-
 void createAccount() {
     FILE *fp;
     struct Account acc;
