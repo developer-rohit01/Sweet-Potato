@@ -80,3 +80,25 @@ void createAccount() {
 
     printf("Account created successfully!\n");
 }
+
+
+
+void displayAll() {
+    FILE *fp;
+    struct Account acc;
+
+    fp = fopen("bank.dat", "rb");
+    if (fp == NULL) {
+        printf("No records found\n");
+        return;
+    }
+
+    printf("\nAcc No\tName\t\tBalance\n");
+
+    while (fread(&acc, sizeof(acc), 1, fp)) {
+        printf("%d\t%s\t\t%.2f\n",
+               acc.accNo, acc.name, acc.balance);
+    }
+
+    fclose(fp);
+}
