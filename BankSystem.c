@@ -37,8 +37,8 @@ int main() {
         switch(choice) {
             case 1: createAccount(); break;
             case 2: depositMoney(); break;
-            // case 3: withdrawMoney(); break;
-            // case 4: checkBalance(); break;
+            case 3: withdrawMoney(); break;
+            case 4: checkBalance(); break;
             case 5: displayAll(); break;
             case 6: exit(0);
             default: printf("Invalid choice!\n");
@@ -143,5 +143,84 @@ void depositMoney() {
 }
 
 
+void withdrawMoney() {
+    FILE *fp;
+    struct Account acc;
+    int accNo, found = 0;
+    float amount;
+
+    fp = fopen("bank.dat", "rb+");
+    if (fp == NULL) {
+        printf("File not found\n");
+        return;
+    }
+
+    printf("Enter Account Number: ");
+    scanf("%d", &accNo);
+
+    while (fread(&acc, sizeof(acc), 1, fp)) {
+        if (acc.accNo == accNo) {
+            printf("Enter amount to withdraw: ");
+            scanf("%f", &amount);
+
+            if (amount <= 0) {
+                printf("Invalid amount\n");
+                fclose(fp);
+                return;
+            }
+
+            if (amount > acc.balance) {
+                printf("Insufficient balance!\n");
+                fclose(fp);
+                return;
+            }
+
+            acc.balance -= amount;
+
+            fseek(fp, -sizeof(acc), SEEK_CUR);
+            fwrite(&acc, sizeof(acc), 1, fp);
+
+            printf("Withdrawal successful!\n");
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Account not found!\n");
+    }
+
+    fclose(fp);
+}
 
 
+
+void checkBalance() {
+    FILE *fp;
+    struct Account acc;
+    int accNo, found = 0;
+
+    fp = fopen("bank.dat", "rb");
+    if (fp == NULL) {
+        printf("No records found\n");
+        return;
+    }
+
+    printf("Enter Account Number: ");
+    scanf("%d", &accNo);
+
+    while (fread(&acc, sizeof(acc), 1, fp)) {
+        if (acc.accNo == accNo) {
+            printf("\nAccount Holder: %s", acc.name);
+            printf("\nCurrent Balance: %.2f\n", acc.balance);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Account not found!\n");
+    }
+
+    fclose(fp);
+}
