@@ -53,3 +53,30 @@ int main() {
 
     return 0;
 }
+
+
+
+void createAccount() {
+    FILE *fp;
+    struct Account acc;
+
+    fp = fopen("bank.dat", "ab");
+    if (fp == NULL) {
+        printf("File error\n");
+        return;
+    }
+
+    printf("Enter Account Number: ");
+    scanf("%d", &acc.accNo);
+
+    printf("Enter Name: ");
+    scanf(" %[^\n]", acc.name);
+
+    printf("Enter Initial Balance: ");
+    scanf("%f", &acc.balance);
+
+    fwrite(&acc, sizeof(acc), 1, fp);
+    fclose(fp);
+
+    printf("Account created successfully!\n");
+}
