@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 struct Account {
-    int accNo;
+    long long accNo;
     char name[50];
     float balance;
 };
@@ -51,6 +51,7 @@ int main() {
 }
 
 
+
 void createAccount() {
     FILE *fp;
     struct Account acc;
@@ -62,7 +63,7 @@ void createAccount() {
     }
 
     printf("Enter Account Number: ");
-    scanf("%d", &acc.accNo);
+    scanf("%lld", &acc.accNo);
 
     printf("Enter Name: ");
     scanf(" %[^\n]", acc.name);
@@ -91,7 +92,7 @@ void displayAll() {
     printf("\nAcc No\tName\t\tBalance\n");
 
     while (fread(&acc, sizeof(acc), 1, fp)) {
-        printf("%d\t%s\t\t%.2f\n",
+        printf("%lld\t%s\t\t%.2f\n",
                acc.accNo, acc.name, acc.balance);
     }
 
@@ -102,7 +103,7 @@ void displayAll() {
 void depositMoney() {
     FILE *fp;
     struct Account acc;
-    int accNo, found = 0;
+    long long accNo, found = 0;
     float amount;
 
     fp = fopen("bank.dat", "rb+");
@@ -112,7 +113,7 @@ void depositMoney() {
     }
 
     printf("Enter Account Number: ");
-    scanf("%d", &accNo);
+    scanf("%lld", &accNo);
 
     while (fread(&acc, sizeof(acc), 1, fp)) {
         if (acc.accNo == accNo) {
@@ -147,7 +148,7 @@ void depositMoney() {
 void withdrawMoney() {
     FILE *fp;
     struct Account acc;
-    int accNo, found = 0;
+    long long accNo, found = 0;
     float amount;
 
     fp = fopen("bank.dat", "rb+");
@@ -157,7 +158,7 @@ void withdrawMoney() {
     }
 
     printf("Enter Account Number: ");
-    scanf("%d", &accNo);
+    scanf("%lld", &accNo);
 
     while (fread(&acc, sizeof(acc), 1, fp)) {
         if (acc.accNo == accNo) {
@@ -199,7 +200,7 @@ void withdrawMoney() {
 void checkBalance() {
     FILE *fp;
     struct Account acc;
-    int accNo, found = 0;
+    long long accNo, found = 0;
 
     fp = fopen("bank.dat", "rb");
     if (fp == NULL) {
@@ -207,8 +208,9 @@ void checkBalance() {
         return;
     }
 
+
     printf("Enter Account Number: ");
-    scanf("%d", &accNo);
+    scanf("%lld", &accNo);
 
     while (fread(&acc, sizeof(acc), 1, fp)) {
         if (acc.accNo == accNo) {
@@ -230,7 +232,7 @@ void checkBalance() {
 void deleteAccount() {
     FILE *fp, *temp;
     struct Account acc;
-    int accNo, found = 0;
+    long long accNo, found = 0;
 
     fp = fopen("bank.dat", "rb");
     if (fp == NULL) {
@@ -246,7 +248,7 @@ void deleteAccount() {
     }
 
     printf("Enter Account Number to delete: ");
-    scanf("%d", &accNo);
+    scanf("%lld", &accNo);
 
     while (fread(&acc, sizeof(acc), 1, fp)) {
         if (acc.accNo == accNo) {
