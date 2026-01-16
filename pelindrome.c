@@ -2,7 +2,8 @@
 #include <string.h>
 
 int main() {
-    char ch[] = "ABABAC";
+    //String to be checked
+    char ch[] = {"ABABAC"};
     int i = 0;
     int j = strlen(ch) - 1;
     int isPalindrome = 1;
@@ -15,7 +16,7 @@ int main() {
         i++;
         j--;
     }
-
+    //Checking condition for palindrome
     if (isPalindrome)
         printf("The string is palindrome");
     else
