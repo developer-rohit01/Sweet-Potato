@@ -51,5 +51,9 @@ int main()
 
     printf("Power = %d", power(base, exp));
 
+    printf("\n Enter to exit");
+    getchar();  
+    getchar();
+
     return 0;
 }
