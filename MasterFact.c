@@ -19,6 +19,15 @@ int sumDigits(int n)
 }
 
 
+int countDigits(int n)
+{
+    if (n == 0)
+        return 0;
+
+    return 1 + countDigits(n / 10);
+}
+
+
 
 
 int main()
@@ -30,6 +39,6 @@ int main()
 
     printf("\nFactorial of %d = %d", num, factorial(num));
     printf("\nSum of digits of %d = %d\n", num, sumDigits(num));
-  
+    printf("Count of digits in %d = %d\n", num, countDigits(num));
     return 0;
 }
