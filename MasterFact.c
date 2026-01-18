@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int factorial(int n)
 {
     if (n == 0)
@@ -27,18 +26,30 @@ int countDigits(int n)
     return 1 + countDigits(n / 10);
 }
 
+int power(int x, int n)
+{
+    if (n == 0)
+        return 1;
 
+    return x * power(x, n - 1);
+}
 
 
 int main()
 {
-    int num;
+    int num, base, exp;
 
     printf("Enter a number: ");
     scanf("%d", &num);
 
     printf("\nFactorial of %d = %d", num, factorial(num));
-    printf("\nSum of digits of %d = %d\n", num, sumDigits(num));
-    printf("Count of digits in %d = %d\n", num, countDigits(num));
+    printf("\nSum of digits = %d", sumDigits(num));
+    printf("\nTotal digits = %d", countDigits(num));
+
+    printf("\n\nEnter base and exponent: ");
+    scanf("%d %d", &base, &exp);
+
+    printf("Power = %d", power(base, exp));
+
     return 0;
 }
