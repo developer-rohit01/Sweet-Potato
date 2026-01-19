@@ -6,6 +6,15 @@ struct Book {
     int quantity;
 };
 
+
+
+void addBook();
+void displayBooks();
+void searchBook();
+void issueBook();
+void returnBook();
+
+
 void addBook()
 {
     struct Book b;
@@ -182,3 +191,40 @@ void returnBook()
 
     fclose(fp);
 }
+
+
+
+
+
+int main()
+{
+    int choice;
+
+    do {
+        printf("\n\n===== LIBRARY MANAGEMENT SYSTEM =====");
+        printf("\n1. Add Book");
+        printf("\n2. Display Books");
+        printf("\n3. Search Book");
+        printf("\n4. Issue Book");
+        printf("\n5. Return Book");
+        printf("\n6. Exit");
+
+        printf("\n\nEnter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+            case 1: addBook(); break;
+            case 2: displayBooks(); break;
+            case 3: searchBook(); break;
+            case 4: issueBook(); break;
+            case 5: returnBook(); break;
+            case 6: printf("\nExiting program."); break;
+            default: printf("\nInvalid choice.");
+        }
+
+    } while (choice != 6);
+
+    return 0;
+}
+
