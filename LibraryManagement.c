@@ -64,3 +64,20 @@ void displayBooks()
     fclose(fp);
 }
 
+void searchBook()
+{
+    struct Book b;
+    FILE *fp;
+    int id, found = 0;
+
+    fp = fopen("library.dat", "rb");
+
+    if (fp == NULL) {
+        printf("\nFile not found.\n");
+        return;
+    }
+
+    printf("\nEnter Book ID to search: ");
+    scanf("%d", &id);
+
+   
