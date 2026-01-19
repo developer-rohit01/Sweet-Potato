@@ -99,3 +99,50 @@ void searchBook()
 
     fclose(fp);
 }
+
+void issueBook()
+{
+    struct Book b;
+    FILE *fp;
+    int id, found = 0;
+
+    fp = fopen("library.dat", "rb+");
+
+    if (fp == NULL) {
+        printf("\nFile not found.\n");
+        return;
+    }
+
+    printf("\nEnter Book ID to issue: ");
+    scanf("%d", &id);
+
+    while (fread(&b, sizeof(b), 1, fp))
+    {
+        if (b.bookId == id)
+        {
+            found = 1;
+
+            if (b.quantity > 0)
+            {
+                b.quantity--;
+
+                fseek(fp, -sizeof(b), SEEK_CUR);
+                fwrite(&b, sizeof(b), 1, fp);
+
+                printf("\nBook issued successfully.");
+            }
+            else
+            {
+                printf("\nBook not available.");
+            }
+
+            break;
+        }
+    }
+
+    if (!found)
+        printf("\nBook ID not found.");
+
+    fclose(fp);
+}
+
