@@ -37,4 +37,30 @@ void addBook()
     printf("\nBook added successfully.\n");
 }
 
+void displayBooks()
+{
+    struct Book b;
+    FILE *fp;
+
+    fp = fopen("library.dat", "rb");
+
+    if (fp == NULL) {
+        printf("\nNo records found.\n");
+        return;
+    }
+
+    printf("\n-------------------------------");
+    printf("\nID\tTitle\t\tAuthor\t\tQty");
+    printf("\n-------------------------------");
+
+    while (fread(&b, sizeof(b), 1, fp))
+    {
+        printf("\n%d\t%s\t\t%s\t\t%d",
+               b.bookId, b.title, b.author, b.quantity);
+    }
+
+    printf("\n-------------------------------");
+
+    fclose(fp);
+}
 
