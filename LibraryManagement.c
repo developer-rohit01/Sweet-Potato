@@ -146,3 +146,39 @@ void issueBook()
     fclose(fp);
 }
 
+void returnBook()
+{
+    struct Book b;
+    FILE *fp;
+    int id, found = 0;
+
+    fp = fopen("library.dat", "rb+");
+
+    if (fp == NULL) {
+        printf("\nFile not found.\n");
+        return;
+    }
+
+    printf("\nEnter Book ID to return: ");
+    scanf("%d", &id);
+
+    while (fread(&b, sizeof(b), 1, fp))
+    {
+        if (b.bookId == id)
+        {
+            b.quantity++;
+
+            fseek(fp, -sizeof(b), SEEK_CUR);
+            fwrite(&b, sizeof(b), 1, fp);
+
+            printf("\nBook returned successfully.");
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found)
+        printf("\nBook ID not found.");
+
+    fclose(fp);
+}
