@@ -80,4 +80,22 @@ void searchBook()
     printf("\nEnter Book ID to search: ");
     scanf("%d", &id);
 
-   
+    while (fread(&b, sizeof(b), 1, fp))
+    {
+        if (b.bookId == id)
+        {
+            printf("\nBook Found!");
+            printf("\nID: %d", b.bookId);
+            printf("\nTitle: %s", b.title);
+            printf("\nAuthor: %s", b.author);
+            printf("\nQuantity: %d", b.quantity);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found)
+        printf("\nBook not found.");
+
+    fclose(fp);
+}
