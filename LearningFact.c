@@ -13,7 +13,7 @@ int main(){
   int n;
   printf("Enter the number to Get Factorial: ");
   scanf("%d",&n);
-  
+  // Calculate factorial
   int c = fact(n);
   printf("Factorial of %d is %d\n", n, c);
      return 0;

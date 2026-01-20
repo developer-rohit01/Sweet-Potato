@@ -6,6 +6,7 @@ struct BankAtm{
     float balance;
 };
 
+
 int main(){
     struct BankAtm customer;
     
@@ -22,6 +23,6 @@ int main(){
     printf("Name: %s\n", customer.name);
     printf("Account Number: %d\n", customer.acc_no);
     printf("Balance: %.2f\n", customer.balance);
-    
+
    return 0;
 }
