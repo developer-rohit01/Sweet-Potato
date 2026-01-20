@@ -7,7 +7,6 @@ int main(){
   printf("********** Occurrence of a digit in a number ASCAT Question **********\n");
   printf("Enter the number you want to find its count: \a");
   scanf("%d",&a);
-
   printf("Enter the Number in which you want to find the count: \a");
   scanf("%d",&b);
   
@@ -17,7 +16,6 @@ int main(){
   getchar();
 
   getchar();
-
   return 0;
 }
 
