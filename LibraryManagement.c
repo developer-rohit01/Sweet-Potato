@@ -13,6 +13,44 @@ void displayBooks();
 void searchBook();
 void issueBook();
 void returnBook();
+void deletebook();
+
+void deletebook(){
+    struct Book b;
+    FILE *fp, *tempFp;
+    int id, found = 0;
+
+    fp = fopen("library.dat", "rb");
+    tempFp = fopen("temp.dat", "wb");
+
+    if (fp == NULL || tempFp == NULL) {
+        printf("\nFile error.\n");
+        return;
+    }
+
+    printf("\nEnter Book ID to delete: ");
+    scanf("%d", &id);
+
+    while (fread(&b, sizeof(b), 1, fp))
+    {
+        if (b.bookId == id)
+        {
+            found = 1;
+            printf("\nBook with ID %d deleted successfully.", id);
+            continue; // Skip writing this book to temp file
+        }
+        fwrite(&b, sizeof(b), 1, tempFp);
+    }
+
+    if (!found)
+        printf("\nBook ID not found.");
+
+    fclose(fp);
+    fclose(tempFp);
+
+    remove("library.dat");
+    rename("temp.dat", "library.dat");
+}
 
 
 void addBook()
@@ -207,7 +245,8 @@ int main()
         printf("\n3. Search Book");
         printf("\n4. Issue Book");
         printf("\n5. Return Book");
-        printf("\n6. Exit");
+        printf("\n6. Delete Book");
+        printf("\n7. Exit");
 
         printf("\n\nEnter your choice: ");
         scanf("%d", &choice);
@@ -219,11 +258,12 @@ int main()
             case 3: searchBook(); break;
             case 4: issueBook(); break;
             case 5: returnBook(); break;
-            case 6: printf("\nExiting program."); break;
+            case 6: deletebook(); break;    
+            case 7: printf("\nExiting program."); break;
             default: printf("\nInvalid choice.");
         }
 
-    } while (choice != 6);
+    } while (choice != 7);
 
     return 0;
 }
