@@ -10,9 +10,9 @@ int main(){
 
     scanf("%d",&b);
 
-    sum(a,b);
+    int c= sum(a,b);
 
-    printf("The n is : %d and b is : %d",a,n);
+    printf("The n is : %d and b is : %d",a,c);
 
    return 0;
 }
