@@ -14,7 +14,7 @@ struct date{
     int year;
 };
 struct date givedate();
-
+void showdate();
 
 int main(){
   
@@ -36,8 +36,7 @@ int main(){
   struct  date d1;  
   d1=givedate();
 
-  printf("\n--- Date Details ---\n");
-  printf("Date: %d-%s-%d\n", d1.day, d1.month, d1.year);
+  showdate(d1);
 
   return 0;
 }
@@ -55,4 +54,12 @@ struct date givedate(){
   printf("Enter day month year: ");
   scanf("%d %s %d", &s1.day, &s1.month, &s1.year);
   return s1;
+}
+
+
+void showdate(struct date s1){
+  printf("\n--- Date Details ---\n");
+  printf("Date: %d-%s-%d\n", s1.day, s1.month, s1.year);
+
+
 }
