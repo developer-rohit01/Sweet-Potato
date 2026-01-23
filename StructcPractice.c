@@ -17,13 +17,20 @@ struct date givedate();
 
 int main(){
   
-    struct student s1;
+  struct student s1;
   printf("Enter Student Name: ");
   scanf("%s", s1.name);
   printf("Emter roll No: ");
   scanf("%d", &s1.roll_no); 
   printf("Enter Marks: ");
   scanf("%f", &s1.marks);
+
+    printf("\n--- Student Details ---\n");
+
+
+  printf("Name: %s\n", s1.name);      
+  printf("Roll No: %d\n", s1.roll_no);
+  printf("Marks: %.2f\n", s1.marks);
   
   // struct  date d1;  
   // d1=givedate();
