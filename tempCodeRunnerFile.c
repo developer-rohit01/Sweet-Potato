@@ -1,3 +1,2 @@
-    // case 2: depositMoney(); break;
-            // case 3: withdrawMoney(); break;
-            // case 4: checkBalance(); break;
+ struct student std[100];
+  int i,k,n;
