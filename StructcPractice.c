@@ -18,7 +18,8 @@ struct date{
 struct date givedate();
 void showdate(struct date);
 
-struct Student Enterstd();
+struct student Enterstd(int);
+
 void ShowStd(struct student);
 
 
@@ -28,7 +29,14 @@ int main(){
   // showdate(d1);
   struct student std[100];
   int i,k,n;
-  std[]= Enterstd();
+
+  printf("Enter the Total Student no: ");
+  scanf("%d",&n);
+  
+
+  for(i=0;i<n;i++){
+  std[i]= Enterstd(i);
+  }
 
 
 
@@ -70,24 +78,18 @@ void showdate(struct date s1){
 }
 
 
-struct student Enterstd(){
+struct student Enterstd(int j){
   
     struct student ltd[100];
-    int n;
-     printf("Enter the total students: ");
-     scanf("%d",&n);
-
-
-      for(int i=0;i<n;i++){
-    int k=i;
+    int k=j; 
     printf("\nStudent %d\n",k+1);
     printf("Enter Name: ");
-    scanf(" %[^\n]",ltd[i].name);
+    scanf(" %[^\n]",ltd[j].name);
     printf("Enter Rollno: ");
-    scanf("%d",&ltd[i].roll_no);
+    scanf("%d",&ltd[j].roll_no);
     printf("Enter Marks: ");
-    scanf("%f",&ltd[i].marks);
-  }
+    scanf("%f",&ltd[j].marks);
 
-  return ltd[];
+  return ltd[j];
 }
+
