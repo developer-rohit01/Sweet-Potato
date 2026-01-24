@@ -39,7 +39,7 @@ int main(){
   }
 
   for(i=0;i<n;i++){
-    ShowStd(std,i);
+    ShowStd(std[i],i);
   }
 
 
@@ -91,12 +91,12 @@ struct student Enterstd(int j){
   return ltd[j];
 }
 
-void Showstd( struct student ltd[],int i){
+void Showstd( struct student std[],int i){
     
   
       int k=i;
     printf("\nStudent %d\n",k+1);
-    printf("Student Name: %s\n",ltd[i].name);
-    printf("Student marks: %.2f\n",ltd[i].marks);
-    printf("Student Rollno: %d\n",ltd[i].roll_no);
+    printf("Student Name: %s\n",std[i].name);
+    printf("Student marks: %.2f\n",std[i].marks);
+    printf("Student Rollno: %d\n",std[i].roll_no);
 }
