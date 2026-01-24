@@ -13,30 +13,43 @@ struct date{
     char month[20];
     int year;
 };
+
+
 struct date givedate();
 void showdate();
 
 int main(){
   
-  // struct student s1;
-  // printf("Enter Student Name: ");
-  // scanf("%s", s1.name);
-  // printf("Emter roll No: ");
-  // scanf("%d", &s1.roll_no); 
-  // printf("Enter Marks: ");
-  // scanf("%f", &s1.marks);
-
-  //   printf("\n--- Student Details ---\n");
-
-
-  // printf("Name: %s\n", s1.name);      
-  // printf("Roll No: %d\n", s1.roll_no);
-  // printf("Marks: %.2f\n", s1.marks);
-  
+  struct student std[5];
+  int i,k;
   struct  date d1;  
   d1=givedate();
-
   showdate(d1);
+
+
+  for(i=0;i<5;i++){
+
+    k=i;
+    printf("Student %d\n",k+1);
+    printf("Enter Name: ");
+    scanf(" %[^\n]",std[i].name);
+    printf("Enter Rollno: ");
+    scanf("%d",&std[i].roll_no);
+    printf("Enter Marks: ");
+    scanf("%f",&std[i].marks);
+  }
+  
+  for(i=0;i<5;i++){
+    k=i;
+    printf("Student %d\n",k+1);
+    printf("Student Name: %s",std[i].name);
+    printf("Student marks: %d",std[i].marks)
+
+  }
+
+  }
+
+
 
   return 0;
 }
@@ -60,6 +73,4 @@ struct date givedate(){
 void showdate(struct date s1){
   printf("\n--- Date Details ---\n");
   printf("Date: %d-%s-%d\n", s1.day, s1.month, s1.year);
-
-
 }
