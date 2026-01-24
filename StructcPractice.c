@@ -20,17 +20,20 @@ void showdate();
 
 int main(){
   
-  struct student std[5];
-  int i,k;
-  struct  date d1;  
-  d1=givedate();
-  showdate(d1);
+  struct student std[100];
+  int i,k,n;
+  // struct  date d1;  
+  // d1=givedate();
+  // showdate(d1);
 
+ printf("Enter the total students: ");
+ scanf("%d",&n);
 
-  for(i=0;i<5;i++){
+  for(i=0;i<n;i++){
 
     k=i;
-    printf("Student %d\n",k+1);
+   
+    printf("\nStudent %d\n",k+1);
     printf("Enter Name: ");
     scanf(" %[^\n]",std[i].name);
     printf("Enter Rollno: ");
@@ -39,18 +42,15 @@ int main(){
     scanf("%f",&std[i].marks);
   }
   
-  for(i=0;i<5;i++){
+  for(i=0;i<n;i++){
     k=i;
-    printf("Student %d\n",k+1);
-    printf("Student Name: %s",std[i].name);
-    printf("Student marks: %d",std[i].marks)
-
+    printf("\nStudent %d\n",k+1);
+    printf("Student Name: %s\n",std[i].name);
+    printf("Student marks: %.2f\n",std[i].marks);
+    printf("Student Rollno: %d\n",std[i].roll_no);
   }
 
-  }
-
-
-
+  
   return 0;
 }
 
