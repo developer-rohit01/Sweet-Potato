@@ -20,7 +20,7 @@ void showdate(struct date);
 
 struct student Enterstd(int);
 
-void ShowStd(struct student,int);
+void ShowStd(struct student s[],int);
 
 
 int main(){
@@ -38,9 +38,9 @@ int main(){
   std[i]= Enterstd(i);
   }
 
-  for(i=0;i<n;i++){
-    ShowStd(std[i],i);
-  }
+ 
+    ShowStd(std,n);
+  
 
 
   
@@ -76,27 +76,31 @@ void showdate(struct date s1){
 }
 
 
-struct student Enterstd(int j){
+struct student Enterstd(int i){
   
-    struct student ltd[100];
-    int k=j; 
+    struct student std[100];
+    int k=i; 
     printf("\nStudent %d\n",k+1);
     printf("Enter Name: ");
-    scanf(" %[^\n]",ltd[j].name);
+    scanf(" %[^\n]",std[i].name);
     printf("Enter Rollno: ");
-    scanf("%d",&ltd[j].roll_no);
+    scanf("%d",&std[i].roll_no);
     printf("Enter Marks: ");
-    scanf("%f",&ltd[j].marks);
+    scanf("%f",&std[i].marks);
 
-  return ltd[j];
+  return std[i];
 }
 
-void Showstd( struct student std[],int i){
-    
-  
+void Showstd(struct student std[],int n){
+   
+  for ( int i = 0; i < n; i++)
+  {
       int k=i;
     printf("\nStudent %d\n",k+1);
     printf("Student Name: %s\n",std[i].name);
     printf("Student marks: %.2f\n",std[i].marks);
     printf("Student Rollno: %d\n",std[i].roll_no);
+  }
+  
+ 
 }
