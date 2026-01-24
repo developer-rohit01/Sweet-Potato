@@ -20,7 +20,7 @@ void showdate(struct date);
 
 struct student Enterstd(int);
 
-void ShowStd(struct student);
+void ShowStd(struct student,int);
 
 
 int main(){
@@ -38,18 +38,16 @@ int main(){
   std[i]= Enterstd(i);
   }
 
-
+  for(i=0;i<n;i++){
+    ShowStd(std,i);
+  }
 
 
   
 
 
 //   for(i=0;i<n;i++){
-//     k=i;
-//     printf("\nStudent %d\n",k+1);
-//     printf("Student Name: %s\n",std[i].name);
-//     printf("Student marks: %.2f\n",std[i].marks);
-//     printf("Student Rollno: %d\n",std[i].roll_no);
+
 //   }
 
   
@@ -93,3 +91,12 @@ struct student Enterstd(int j){
   return ltd[j];
 }
 
+void Showstd( struct student ltd[],int i){
+    
+  
+      int k=i;
+    printf("\nStudent %d\n",k+1);
+    printf("Student Name: %s\n",ltd[i].name);
+    printf("Student marks: %.2f\n",ltd[i].marks);
+    printf("Student Rollno: %d\n",ltd[i].roll_no);
+}
