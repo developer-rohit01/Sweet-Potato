@@ -15,92 +15,86 @@ struct date{
 };
 
 
-struct date givedate();
-void showdate(struct date);
+struct date givedate(int);
+void showdate(struct date d[],int);
 
 struct student Enterstd(int);
 
-void ShowStd(struct student s[],int);
+void Showstd(struct student s[],struct date d[],int);
 
 
 int main(){
-  // struct  date d1;  
-  // d1=givedate();
-  // showdate(d1);
-  struct student std[100];
-  int i,k,n;
 
+  struct student std[100];
+  struct  date d[100];  
+  int i,k,n;
+  
   printf("Enter the Total Student no: ");
   scanf("%d",&n);
   
 
   for(i=0;i<n;i++){
   std[i]= Enterstd(i);
+  d[i]=givedate(i);
   }
 
- 
-    ShowStd(std,n);
-  
+   Showstd(std,d,n);
+  // showdate(d,n);
 
-
-  
-
-
-//   for(i=0;i<n;i++){
-
-//   }
-
-  
   return 0;
+
+}
+
+
+struct date givedate(int i){
+  struct date s[100];
+  int l =i;
+  printf("Enter Date of Birth: ");
+  scanf("%d %s %d", &s[i].day, &s[i].month, &s[i].year);
+  return s[i];
 }
 
 
 
 
 
-
-
-
-
-struct date givedate(){
-  struct date s1;
-  printf("Enter day month year: ");
-  scanf("%d %s %d", &s1.day, &s1.month, &s1.year);
-  return s1;
-}
-
-
-void showdate(struct date s1){
-  printf("\n--- Date Details ---\n");
-  printf("Date: %d-%s-%d\n", s1.day, s1.month, s1.year);
-}
-
-
+//Function definition for Enter entry
 struct student Enterstd(int i){
+  struct student std[100];
+  int k=i; 
+  printf("\nStudent %d\n",k+1);
+  printf("Enter Name: ");
+  scanf(" %[^\n]",std[i].name);
+  printf("Enter Rollno: ");
+  scanf("%d",&std[i].roll_no);
+  printf("Enter Marks: ");
+  scanf("%f",&std[i].marks);
   
-    struct student std[100];
-    int k=i; 
-    printf("\nStudent %d\n",k+1);
-    printf("Enter Name: ");
-    scanf(" %[^\n]",std[i].name);
-    printf("Enter Rollno: ");
-    scanf("%d",&std[i].roll_no);
-    printf("Enter Marks: ");
-    scanf("%f",&std[i].marks);
-
   return std[i];
 }
 
-void Showstd(struct student std[],int n){
-   
+
+
+
+
+// void showdate(struct date d[],int n){
+//   printf("\n--- Date Details ---\n");
+//   for(int i=0;i<n;i++){
+  
+// }
+// }
+
+
+
+//Function definition for showdate
+void Showstd(struct student std[],struct date d[],int n){
   for ( int i = 0; i < n; i++)
   {
       int k=i;
     printf("\nStudent %d\n",k+1);
-    printf("Student Name: %s\n",std[i].name);
-    printf("Student marks: %.2f\n",std[i].marks);
-    printf("Student Rollno: %d\n",std[i].roll_no);
+    printf("Name: %s\n",std[i].name);
+    printf("marks: %.2f\n",std[i].marks);
+    printf("Rollno: %d\n",std[i].roll_no);
+    printf("DOB: %d-%s-%d\n", d[i].day, d[i].month, d[i].year);
   }
-  
- 
 }

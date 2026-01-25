@@ -1,2 +1,1 @@
- struct student std[100];
-  int i,k,n;
+void ShowStd(struct student s[],int);
