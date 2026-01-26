@@ -79,6 +79,10 @@ struct student Enterstd(int i){
   scanf("%d",&std[i].roll_no);
   printf("Enter Marks: ");
   scanf("%f",&std[i].marks);
+
+  printf("\nEnter to Exit..,");
+  getchar();
+  getchar();
   
   return std[i];
 }
