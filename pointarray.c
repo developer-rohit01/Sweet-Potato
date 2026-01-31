@@ -5,10 +5,12 @@ int main(){
   for(i=0; i<5;i++){
     scanf("%d",(a+i));
   }
+
   printf("\nThis is the Normalia \n");
   for(i=0;i<5;i++){
     printf("%d\n",*(a+i));
   }
+  
   printf("\nThis is Reverseia \n");
   for(i=4;i>=0;i--){
     printf("%d\n",*(a+i));
