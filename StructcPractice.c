@@ -71,8 +71,7 @@ struct date givedate(int i){
 //Function definition for Enter entry
 struct student Enterstd(int i){
   struct student std[100];
-  int k=i; 
-  printf("\nStudent %d\n",k+1);
+  printf("\nStudent %d\n",i+1);
   printf("Enter Name: ");
   scanf(" %[^\n]",std[i].name);
   printf("Enter Rollno: ");
@@ -80,10 +79,6 @@ struct student Enterstd(int i){
   printf("Enter Marks: ");
   scanf("%f",&std[i].marks);
 
-  printf("\nEnter to Exit..,");
-  getchar();
-  getchar();
-  
   return std[i];
 }
 
