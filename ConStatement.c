@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    int a, b, choice;
+    int a, b;
+    int choice;
 
     printf("Enter two numbers: ");
     scanf("%d %d", &a, &b);
@@ -46,7 +47,7 @@ int main() {
 
     //  Switch case
     printf("\nMenu:\n");
-    printf("1. Add\n");
+    printf("+. Add\n");
     printf("2. Subtract\n");
     printf("3. Multiply\n");
     printf("4. Divide\n");
@@ -58,9 +59,10 @@ int main() {
         case 1:
             printf("Result = %d\n", a + b);
             break;
-        case 2:
-            printf("Result = %d\n", a - b);
-            break;
+        case 2:{
+             printf("Result = %d\n", a - b);
+            }break;
+            
         case 3:
             printf("Result = %d\n", a * b);
             break;
