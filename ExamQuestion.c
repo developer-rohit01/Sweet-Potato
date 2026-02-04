@@ -22,5 +22,7 @@ int main() {
 
     printf("Number after incrementing by 50: %d\n", student.num);
 
+    
     return 0;
+
 }
