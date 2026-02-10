@@ -1,9 +1,3 @@
-
-
-
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -51,7 +45,7 @@ int main() {
 }
 
 
-
+// Create account function
 void createAccount() {
     FILE *fp;
     struct Account acc;
@@ -78,7 +72,7 @@ void createAccount() {
 }
 
 
-
+// Display all accounts function
 void displayAll() {
     FILE *fp;
     struct Account acc;
@@ -99,7 +93,7 @@ void displayAll() {
     fclose(fp);
 }
 
-
+// Deposit money function
 void depositMoney() {
     FILE *fp;
     struct Account acc;
@@ -144,6 +138,7 @@ void depositMoney() {
     fclose(fp);
 }
 
+// Withdraw money function
 
 void withdrawMoney() {
     FILE *fp;
@@ -196,6 +191,7 @@ void withdrawMoney() {
 }
 
 
+// Check balance function
 
 void checkBalance() {
     FILE *fp;
