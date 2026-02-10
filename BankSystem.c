@@ -56,7 +56,7 @@ void createAccount() {
         return;
     }
 
-    printf("Enter Account Number: ");
+    printf("Enter Account Number : ");
     scanf("%lld", &acc.accNo);
 
     printf("Enter Name: ");
