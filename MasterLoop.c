@@ -54,7 +54,7 @@ int main() {
             continue;
         printf("%d ", k);
     }
-     printf("\nPress Enter to exit...");
+     printf("\nPress Enter to exit.....");
     getchar();
     getchar();
 
