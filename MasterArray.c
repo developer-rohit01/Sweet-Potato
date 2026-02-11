@@ -47,7 +47,7 @@ int main() {
             break;
         }
     }
-    if (!found) printf("Not found");
+    if (!found) printf("Not found at any index");
 
     // Reverse display
     printf("\nReversed array: ");
