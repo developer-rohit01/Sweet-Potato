@@ -161,7 +161,7 @@ void withdrawMoney() {
             scanf("%f", &amount);
 
             if (amount <= 0) {
-                printf("Invalid amount\n");
+                printf("Invalid amount entered\n");
                 fclose(fp);
                 return;
             }
@@ -243,7 +243,7 @@ void deleteAccount() {
         return;
     }
 
-    printf("Enter Account Number to delete: ");
+    printf("Enter Account Number to delete the account: ");
     scanf("%lld", &accNo);
 
     while (fread(&acc, sizeof(acc), 1, fp)) {
