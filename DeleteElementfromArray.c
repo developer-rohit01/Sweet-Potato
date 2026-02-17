@@ -1,9 +1,9 @@
 #include<stdio.h>
 
 int main(){
-  int ar[]={1,2,33,4,5};
+  int ar[]={1,2,34,4,5};
   int n=sizeof(ar)/sizeof(ar[0]);
-  int val=33;
+  int val=34;
   int k=0;
  
   for(int i=0;i<n;i++){
@@ -15,7 +15,7 @@ int main(){
 
   
   printf("Array after removal: ");
-  for(int i=0;i<n-1;i++){
+  for(int i=0;i<n+3;i++){
     printf("%d ",ar[i]);
   }
    return 0;
