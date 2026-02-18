@@ -50,7 +50,7 @@ void createAccount() {
     FILE *fp;
     struct Account acc;
 
-    fp = fopen("bank.dat", "ab");
+    fp = fopen("banking.dat", "ab");
     if (fp == NULL) {
         printf("File error\n");
         return;
@@ -77,7 +77,7 @@ void displayAll() {
     FILE *fp;
     struct Account acc;
 
-    fp = fopen("bank.dat", "rb");
+    fp = fopen("banking.dat", "rb");
     if (fp == NULL) {
         printf("No records found\n");
         return;
@@ -100,7 +100,7 @@ void depositMoney() {
     long long accNo, found = 0;
     float amount;
 
-    fp = fopen("bank.dat", "rb+");
+    fp = fopen("banking.dat", "rb+");
     if (fp == NULL) {
         printf("File not found\n");
         return;
@@ -109,6 +109,7 @@ void depositMoney() {
     printf("Enter Account Number: ");
     scanf("%lld", &accNo);
 
+//reading the file and checking the account number
     while (fread(&acc, sizeof(acc), 1, fp)) {
         if (acc.accNo == accNo) {
             printf("Enter amount to deposit: ");
@@ -146,7 +147,7 @@ void withdrawMoney() {
     long long accNo, found = 0;
     float amount;
 
-    fp = fopen("bank.dat", "rb+");
+    fp = fopen("banking.dat", "rb+");
     if (fp == NULL) {
         printf("File not found\n");
         return;
@@ -155,6 +156,7 @@ void withdrawMoney() {
     printf("Enter Account Number: ");
     scanf("%lld", &accNo);
 
+//reading the file and checking the account number
     while (fread(&acc, sizeof(acc), 1, fp)) {
         if (acc.accNo == accNo) {
             printf("Enter amount to withdraw: ");
@@ -198,7 +200,7 @@ void checkBalance() {
     struct Account acc;
     long long accNo, found = 0;
 
-    fp = fopen("bank.dat", "rb");
+    fp = fopen("banking.dat", "rb");
     if (fp == NULL) {
         printf("No records found\n");
         return;
@@ -230,7 +232,7 @@ void deleteAccount() {
     struct Account acc;
     long long accNo, found = 0;
 
-    fp = fopen("bank.dat", "rb");
+    fp = fopen("banking.dat", "rb");
     if (fp == NULL) {
         printf("No records found\n");
         return;
@@ -258,7 +260,7 @@ void deleteAccount() {
     fclose(temp);
 
     if (found) {
-        remove("bank.dat");
+        remove("banking.dat");
         rename("temp.dat", "bank.dat");
         printf("Account deleted successfully!\n");
     } else {
