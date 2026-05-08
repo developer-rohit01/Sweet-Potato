@@ -12,7 +12,7 @@ int main() {
         printf("\nBoth numbers are equal.\n");
     }
 
-    //  if-else
+    //  if-else condition 
     if (a > b) {
         printf("a is greater than b.\n");
     } else {
@@ -29,7 +29,7 @@ int main() {
         printf("a is Zero\n");
     }
 
-    //  Nested if
+    //  Nested if condition 
     printf("\nChecking biggest number and parity:\n");
     if (a > b) {
         printf("a is bigger\n");
