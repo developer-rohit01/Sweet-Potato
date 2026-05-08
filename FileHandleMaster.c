@@ -47,7 +47,7 @@ int main(){
 }
 
 
-// function to write in file 
+// function to write in the file 
 void write_file() {
     char filename[50], line[500];
     printf("Enter filename: ");
