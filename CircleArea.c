@@ -1,7 +1,7 @@
  #define PI 3.14
 #include<stdio.h>
 
-//Function declaration for circle 
+//Function declaration for circle function 
 float circle(int R){
  float Area=PI*R*R;
 
