@@ -19,7 +19,7 @@ int main(){
       printf("Area of cirlce is = %.2f",S);
 
 
-    printf("\nPress Enter to exit...");
+    printf("\nPress Enter to exit.....");
     getchar();
     getchar();
    return 0;
