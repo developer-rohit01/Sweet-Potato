@@ -1,4 +1,4 @@
-// By using pointer increase increase a num by 50 
+// By using pointer increase increase a num by 50. 
 
 
 #include <stdio.h>

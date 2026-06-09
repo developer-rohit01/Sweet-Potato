@@ -1,7 +1,7 @@
  #define PI 3.14
 #include<stdio.h>
 
-//Function declaration for circle 
+//Function declaration for circle function 
 float circle(int R){
  float Area=PI*R*R;
 
@@ -19,7 +19,7 @@ int main(){
       printf("Area of cirlce is = %.2f",S);
 
 
-    printf("\nPress Enter to exit...");
+    printf("\nPress Enter to exit.....");
     getchar();
     getchar();
    return 0;
